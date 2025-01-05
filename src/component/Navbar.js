@@ -1,29 +1,25 @@
+import { NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import style from './css/Navbar.module.css'
 
-import img from './instagram.png'
 
 
-function BasicExample() {
+function Navbars() {
   return (
-    <Navbar expand="lg"  bg="primary" data-bs-theme="primary">
-      <Container>
-          <Navbar.Brand href="https://www.instagram.com/mohamed_y_asser/" style={{color:"#fff",cursor:"pointer" }} className='navs'>
-            <img
-              alt=""
-              src={img}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
-            Mohamed Yasser
-          </Navbar.Brand>
+    <Navbar className={style.navbar}>
+        <Container>
+          <Nav className="">
+            <NavLink to="/" className={style.NavLink}>Vote</NavLink>
+            <NavLink to="/Results" className={style.NavLink}>Results</NavLink>
+          
+          </Nav>
         </Container>
-    </Navbar>
+      </Navbar>
   );
 }
 
-export default BasicExample;
+export default Navbars;
